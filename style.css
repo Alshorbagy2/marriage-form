@@ -222,3 +222,125 @@ input[type="file"]::file-selector-button {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.payment-section {
+  margin: 30px 0;
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 60%, #f5efff 100%);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+}
+
+.section-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  margin-bottom: 16px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.payment-main-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.payment-main-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+}
+
+.price-badge {
+  position: absolute;
+  top: -12px;
+  inset-inline-end: -12px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-weight: 900;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.35);
+}
+
+.price-note {
+  color: #374151;
+  font-size: 13px;
+  margin: 6px 0 10px;
+}
+
+.price-benefits {
+  padding-inline-start: 18px;
+  margin: 8px 0 0;
+  color: #374151;
+  font-size: 13px;
+}
+
+.pay-distribution {
+  margin: 18px 0 10px;
+}
+
+.dist-title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.pay-distribution .bar {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.pay-distribution .fill {
+  position: absolute;
+  top: 0; bottom: 0;
+  border-radius: 999px;
+  animation: grow 900ms ease-out forwards;
+}
+
+.pay-distribution .fill.primary {
+  left: 0;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+.pay-distribution .fill.secondary {
+  right: 0;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+@keyframes grow {
+  from { width: 0; }
+  to { width: inherit; }
+}
+
+.bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.payment-trust {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #374151;
+}
+
