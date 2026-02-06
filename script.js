@@ -12,20 +12,27 @@ function showStep(index) {
   progressBar.style.width = progress + "%";
 }
 
+function validateCurrentStep() {
+  const currentInputs = steps[currentStep].querySelectorAll("input, select, textarea");
+  for (let input of currentInputs) {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return false;
+    }
+  }
+  return true;
+}
+
 function nextStep() {
+  if (!validateCurrentStep()) return;
+
   if (currentStep === 3 && !agreeTerms.checked) {
     alert("يجب الموافقة على الشروط أولاً");
     return;
   }
+
   if (currentStep < steps.length - 1) {
     currentStep++;
-    showStep(currentStep);
-  }
-}
-
-function prevStep() {
-  if (currentStep > 0) {
-    currentStep--;
     showStep(currentStep);
   }
 }
