@@ -74,23 +74,24 @@
   </div>
 </div>
 
-      <!-- Step 3 -->
       <div class="step">
-        <h2>تفاصيل التواصل</h2>
-        <input type="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" placeholder="رقم الهاتف">
-        <select required>
-          <option value="">وسيلة التواصل المفضلة</option>
-          <option>واتساب</option>
-          <option>بريد إلكتروني</option>
-          <option>مكالمة هاتفية</option>
-        </select>
+  <h2>تفاصيل التواصل</h2>
 
-        <div class="buttons">
-          <button type="button" onclick="prevStep()">رجوع</button>
-          <button type="button" onclick="nextStep()">التالي</button>
-        </div>
-      </div>
+  <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+  <input type="tel" id="phone" placeholder="رقم الهاتف (اختياري)" pattern="^[0-9+\\s-]{8,15}$">
+
+  <select id="contactMethod" required>
+    <option value="">وسيلة التواصل المفضلة</option>
+    <option>واتساب</option>
+    <option>البريد الإلكتروني</option>
+    <option>مكالمة هاتفية</option>
+  </select>
+
+  <div class="buttons">
+    <button type="button" onclick="prevStep()">رجوع</button>
+    <button type="button" onclick="nextStep()">التالي</button>
+  </div>
+</div>
 
       <!-- Step 4 -->
       <div class="step">
