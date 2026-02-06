@@ -20,6 +20,37 @@ button:hover, .pay-btn:hover {
   box-shadow: 0 10px 20px rgba(124,58,237,.25);
   filter: brightness(1.05);
 }
+.trust-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 15px 0 25px;
+}
+
+.trust-item {
+  background: linear-gradient(135deg, #ffffff, #f3e8ff);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.12);
+}
+
+.trust-number {
+  display: block;
+  font-family: "Cairo", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.trust-label {
+  font-size: 13px;
+  color: #6b7280;
+}
 
 h1, h2 {
   font-family: "Cairo", Arial, sans-serif;
