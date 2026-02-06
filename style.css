@@ -158,22 +158,31 @@ button:disabled {
 }
 .step {
   display: none;
-  animation: fadeSlide 0.5s ease;
+  animation: softIn .45s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes softIn {
+  from { opacity: 0; transform: translateY(10px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 .hint {
   display: block;
   color: #6b7280;
   font-size: 13px;
   margin-top: 6px;
+}
+input[type="file"] {
+  border: 1px dashed #c7d2fe;
+  padding: 12px;
+  background: #f8faff;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button {
+  border: none;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-left: 10px;
 }
