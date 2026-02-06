@@ -45,3 +45,32 @@ if (urlParams.get("paid") === "true") {
 }
 
 showStep(currentStep);
+// Animated Trust Counters
+const counters = document.querySelectorAll('.trust-number');
+let countersStarted = false;
+
+function startCounters() {
+  if (countersStarted) return;
+  countersStarted = true;
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const duration = 1200; // ms
+    const stepTime = Math.max(10, Math.floor(duration / target));
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += Math.ceil(target / 60);
+      if (current >= target) {
+        counter.textContent = target.toLocaleString('ar-EG');
+        clearInterval(timer);
+      } else {
+        counter.textContent = current.toLocaleString('ar-EG');
+      }
+    }, stepTime);
+  });
+}
+
+// تشغيل العداد عند تحميل الصفحة
+window.addEventListener('load', startCounters);
+
