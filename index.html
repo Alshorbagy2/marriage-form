@@ -41,18 +41,38 @@
       <label>رفع صورة شخصية (اختياري)</label>
 <input type="file" accept="image/*">
 
-      <!-- Step 2 -->
       <div class="step">
-        <h2>مواصفات الطرف الآخر</h2>
-        <input type="number" placeholder="السن المطلوب" required>
-        <input type="text" placeholder="الجنسية أو المنطقة">
-        <textarea placeholder="شروط خاصة"></textarea>
+  <h2>المواصفات المطلوبة للطرف الآخر</h2>
 
-        <div class="buttons">
-          <button type="button" onclick="prevStep()">رجوع</button>
-          <button type="button" onclick="nextStep()">التالي</button>
-        </div>
-      </div>
+  <input type="number" id="desiredAge" placeholder="السن المطلوب" required min="18" max="70">
+  <input type="number" id="desiredHeight" placeholder="الطول (سم) - اختياري" min="120" max="230">
+
+  <select id="desiredLang" required>
+    <option value="">اللغة الأساسية</option>
+    <option>العربية</option>
+    <option>الإنجليزية</option>
+    <option>أخرى</option>
+  </select>
+
+  <select id="education" required>
+    <option value="">المؤهل الدراسي</option>
+    <option>ثانوي</option>
+    <option>دبلوم</option>
+    <option>بكالوريوس</option>
+    <option>ماجستير</option>
+    <option>دكتوراه</option>
+  </select>
+
+  <input type="text" id="desiredNationality" placeholder="الجنسية أو المنطقة" required>
+  <textarea id="special شروط" placeholder="شروط خاصة (اختياري)"></textarea>
+
+  <small class="hint">⚠️ لا يمكن تعديل هذه المواصفات بعد الإرسال</small>
+
+  <div class="buttons">
+    <button type="button" onclick="prevStep()">رجوع</button>
+    <button type="button" onclick="nextStep()">التالي</button>
+  </div>
+</div>
 
       <!-- Step 3 -->
       <div class="step">
