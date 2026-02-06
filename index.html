@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>استمارة التعارف بغرض الزواج</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>استمارة التقديم للتعارف بغرض الزواج</h1>
+    <p class="subtitle">جميع البيانات سرية وتستخدم فقط لغرض الوساطة في الزواج</p>
+
+    <div class="progress">
+      <div id="progress-bar"></div>
+    </div>
+
+    <form id="multiStepForm">
+
+      <!-- Step 1 -->
+      <div class="step active">
+        <h2>المعلومات الشخصية</h2>
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="number" placeholder="العمر" required>
+        <input type="text" placeholder="الجنسية" required>
+        <input type="text" placeholder="اللغات" required>
+
+        <div class="buttons">
+          <button type="button" onclick="nextStep()">التالي</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <h2>مواصفات الطرف الآخر</h2>
+        <input type="number" placeholder="السن المطلوب" required>
+        <input type="text" placeholder="الجنسية أو المنطقة">
+        <textarea placeholder="شروط خاصة"></textarea>
+
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">رجوع</button>
+          <button type="button" onclick="nextStep()">التالي</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <h2>تفاصيل التواصل</h2>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="tel" placeholder="رقم الهاتف">
+        <select required>
+          <option value="">وسيلة التواصل المفضلة</option>
+          <option>واتساب</option>
+          <option>بريد إلكتروني</option>
+          <option>مكالمة هاتفية</option>
+        </select>
+
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">رجوع</button>
+          <button type="button" onclick="nextStep()">التالي</button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <h2>الشروط والأحكام</h2>
+        <p class="terms">
+          هذه الخدمة وساطة للتعارف بغرض الزواج فقط.  
+          الرسوم غير قابلة للاسترداد.  
+          جميع البيانات سرية.  
+          لا يوجد ضمان زواج ولكن يوجد التزام بالمتابعة.
+        </p>
+
+        <label class="checkbox">
+          <input type="checkbox" id="agreeTerms"> أوافق على الشروط والأحكام
+        </label>
+
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">رجوع</button>
+          <button type="button" onclick="nextStep()">التالي</button>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <h2>الدفع والتأكيد</h2>
+        <p>رسوم الخدمة: <strong>240€</strong></p>
+
+        <a id="payBtn" class="pay-btn" href="https://www.paypal.com" target="_blank">
+          ادفع الآن عبر PayPal
+        </a>
+
+        <p id="paymentStatus" class="status">بعد إتمام الدفع سيتم تفعيل زر الإرسال</p>
+
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">رجوع</button>
+          <button type="submit" id="submitBtn" disabled>إرسال الطلب</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
