@@ -73,4 +73,21 @@ function startCounters() {
 
 // تشغيل العداد عند تحميل الصفحة
 window.addEventListener('load', startCounters);
+const paymentSection = document.querySelector('.payment-section');
+if (paymentSection) {
+  paymentSection.style.opacity = 0;
+  paymentSection.style.transform = 'translateY(12px)';
+
+  const reveal = () => {
+    const rect = paymentSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      paymentSection.style.transition = 'all .5s ease';
+      paymentSection.style.opacity = 1;
+      paymentSection.style.transform = 'translateY(0)';
+      window.removeEventListener('scroll', reveal);
+    }
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
+}
 
