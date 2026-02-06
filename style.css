@@ -171,3 +171,9 @@ button:disabled {
     transform: translateX(0);
   }
 }
+.hint {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 6px;
+}
