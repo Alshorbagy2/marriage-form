@@ -1,8 +1,12 @@
 body {
   margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Tajawal", Arial, sans-serif;
   background: linear-gradient(135deg, #ffffff, #e6f0ff, #f3e8ff);
   min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: "Cairo", Arial, sans-serif;
 }
 
 .container {
